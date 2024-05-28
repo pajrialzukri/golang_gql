@@ -1,0 +1,34 @@
+secretkey: 7A25432A462D4A614E645267556B5870
+privatekey: /var/www/html/his-backend/internal/auth/keys/private.pem
+hashCost: 9
+dbuser: root
+dbpass: 1234
+dbhost: localhost
+dbport: 3306
+dbname: superapp_api
+tokenExpiration: 120
+
+# dbsequser: sismedika
+# dbseqpass: d1g1t4ld3l4y2023
+# dbseqhost: hos.sismedika.online
+# dbseqport: 3306
+# dbseqname: histest2023_seq
+photo: /var/www/html/his-backend/photo-folder-location/
+
+# temporary param
+invoice_prefix: RSPAD
+
+#rspad
+# vclaimProviderCode: 0901R003
+# vclaimConsID: 6057
+# vclaimSecretKey: rspad211016
+# vclaimUserKey: 32e99aefa0866a5880067b27d151c3e4
+
+#RS Awal Bros A Yani
+vclaimProviderCode: 0069R052
+vclaimConsID: 18599
+vclaimSecretKey: 5nND2EC70F
+vclaimUserKey: 4a08f8ceb93dbbe57355971d8437d15a
+
+vclaimBaseURL: https://apijkn-dev.bpjs-kesehatan.go.id/vclaim-rest-dev
+vclaimAntreanBaseURL: https://apijkn-dev.bpjs-kesehatan.go.id/antreanrs_dev
