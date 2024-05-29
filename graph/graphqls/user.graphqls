@@ -7,12 +7,10 @@ type User {
 }
 
 input UserInput {
-  id: ID!
   email: String!
   phone: String!
   otp: String!
   source: String!
-  gender: String!
 }
 
 extend type Query {
@@ -21,4 +19,6 @@ extend type Query {
 
 extend type Mutation {
   userCreate(data: UserInput!): User!
+  userUpdate(id: ID, data: UserInput!): User!
+  userDelete(id: ID): Boolean!
 }

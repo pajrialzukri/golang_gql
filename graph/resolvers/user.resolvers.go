@@ -18,6 +18,18 @@ func (r *mutationResolver) UserCreate(ctx context.Context, data model.UserInput)
 	return user.Create(data)
 }
 
+// UserUpdate is the resolver for the userUpdate field.
+func (r *mutationResolver) UserUpdate(ctx context.Context, id *string, data model.UserInput) (*model.User, error) {
+	var user user.User
+	return user.Update(id, data)
+}
+
+// UserDelete is the resolver for the userDelete field.
+func (r *mutationResolver) UserDelete(ctx context.Context, id *string) (bool, error) {
+	var user user.User
+	return user.Delete(id)
+}
+
 // UserGet is the resolver for the userGet field.
 func (r *queryResolver) UserGet(ctx context.Context, id *string) ([]*model.User, error) {
 	var ret []*model.User

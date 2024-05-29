@@ -17,10 +17,8 @@ type User struct {
 }
 
 type UserInput struct {
-	ID     string `json:"id"`
 	Email  string `json:"email"`
 	Phone  string `json:"phone"`
 	Otp    string `json:"otp"`
 	Source string `json:"source"`
-	Gender string `json:"gender"`
 }
