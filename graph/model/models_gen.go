@@ -2,11 +2,18 @@
 
 package model
 
+type Mutation struct {
+}
+
+type Query struct {
+}
+
 type User struct {
-	ID    string `json:"id"`
-	Email string `json:"email"`
-	Phone string `json:"phone"`
-	Otp   string `json:"otp"`
+	ID     string `json:"id"`
+	Email  string `json:"email"`
+	Phone  string `json:"phone"`
+	Otp    string `json:"otp"`
+	Source string `json:"source"`
 }
 
 type UserInput struct {
@@ -15,4 +22,5 @@ type UserInput struct {
 	Phone  string `json:"phone"`
 	Otp    string `json:"otp"`
 	Source string `json:"source"`
+	Gender string `json:"gender"`
 }

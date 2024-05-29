@@ -3,6 +3,7 @@ type User {
   email: String!
   phone: String!
   otp: String!
+  source: String!
 }
 
 input UserInput {
@@ -11,6 +12,7 @@ input UserInput {
   phone: String!
   otp: String!
   source: String!
+  gender: String!
 }
 
 extend type Query {

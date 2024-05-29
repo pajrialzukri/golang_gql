@@ -3,6 +3,7 @@ package user
 import (
 	"backend/graph/model"
 	db "backend/pkg/database"
+	"fmt"
 	"log"
 )
 
@@ -17,7 +18,8 @@ func (user *User) Get(id *string) (*model.User, error) {
 		id,
 		email,
 		phone,
-		otp
+		otp,
+		source
 	FROM users WHERE id = ?
 	`
 	row := db.Handle.QueryRow(q, id)
@@ -27,6 +29,7 @@ func (user *User) Get(id *string) (*model.User, error) {
 		&ret.Email,
 		&ret.Phone,
 		&ret.Otp,
+		&ret.Source,
 	)
 
 	if err != nil {
@@ -42,7 +45,7 @@ func (user *User) Create(data model.UserInput) (*model.User, error) {
 	q := `
 	INSERT INTO users
 (id, email, phone, otp, source)
-VALUES(?, ?, ?, ?);
+VALUES(?, ?, ?, ?, ?);
 	`
 	_, err := db.Handle.Exec(
 		q,
@@ -55,7 +58,7 @@ VALUES(?, ?, ?, ?);
 	if err != nil {
 		return nil, err
 	}
-
+	fmt.Println(data)
 	obj, err := user.Get(&data.ID)
 	if err != nil {
 		return nil, err
