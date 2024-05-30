@@ -1,0 +1,9 @@
+type City {
+  id: ID!
+  province_id: ID!
+  name: String!
+}
+
+extend type Query {
+  cityGet(id: ID): [City]
+}

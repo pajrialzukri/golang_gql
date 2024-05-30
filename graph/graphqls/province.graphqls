@@ -1,0 +1,8 @@
+type Province {
+  id: ID!
+  name: String!
+}
+
+extend type Query {
+  provinceGet(id: ID): [Province]
+}

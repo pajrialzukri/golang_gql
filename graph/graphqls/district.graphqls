@@ -1,0 +1,9 @@
+type District {
+  id: ID!
+  city_id: ID!
+  name: String!
+}
+
+extend type Query {
+  districtGet(id: ID): [District]
+}

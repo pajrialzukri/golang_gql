@@ -1,0 +1,26 @@
+type Patient {
+  id: ID!
+  current_address_id: ID!
+  name: String!
+  birth_date: String!
+  nik: String!
+  religion: String!
+  CurrentAddress: [Address]
+}
+
+input PatientInput {
+  name: String!
+  birth_date: String!
+  nik: String!
+  religion: String!
+}
+
+extend type Query {
+  patientGet(id: ID): [Patient]
+}
+
+extend type Mutation {
+  patientCreate(data: PatientInput!): Patient!
+  patientUpdate(id: ID, data: PatientInput!): Patient!
+  patientDelete(id: ID): Boolean!
+}

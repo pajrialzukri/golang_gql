@@ -1,0 +1,13 @@
+type Address {
+  id: ID!
+  line: String!
+  province_id: ID!
+  city_id: ID!
+  district_id: ID!
+  village_id: ID!
+  postal_code: String!
+}
+
+extend type Query {
+  addressGet(id: ID): [Address]
+}

@@ -2,7 +2,51 @@
 
 package model
 
+type Address struct {
+	ID         string `json:"id"`
+	Line       string `json:"line"`
+	ProvinceID string `json:"province_id"`
+	CityID     string `json:"city_id"`
+	DistrictID string `json:"district_id"`
+	VillageID  string `json:"village_id"`
+	PostalCode string `json:"postal_code"`
+}
+
+type City struct {
+	ID         string `json:"id"`
+	ProvinceID string `json:"province_id"`
+	Name       string `json:"name"`
+}
+
+type District struct {
+	ID     string `json:"id"`
+	CityID string `json:"city_id"`
+	Name   string `json:"name"`
+}
+
 type Mutation struct {
+}
+
+type Patient struct {
+	ID               string     `json:"id"`
+	CurrentAddressID string     `json:"current_address_id"`
+	Name             string     `json:"name"`
+	BirthDate        string     `json:"birth_date"`
+	Nik              string     `json:"nik"`
+	Religion         string     `json:"religion"`
+	CurrentAddress   []*Address `json:"CurrentAddress,omitempty"`
+}
+
+type PatientInput struct {
+	Name      string `json:"name"`
+	BirthDate string `json:"birth_date"`
+	Nik       string `json:"nik"`
+	Religion  string `json:"religion"`
+}
+
+type Province struct {
+	ID   string `json:"id"`
+	Name string `json:"name"`
 }
 
 type Query struct {
@@ -21,4 +65,10 @@ type UserInput struct {
 	Phone  string `json:"phone"`
 	Otp    string `json:"otp"`
 	Source string `json:"source"`
+}
+
+type Village struct {
+	ID         string `json:"id"`
+	DistrictID string `json:"district_id"`
+	Name       string `json:"name"`
 }
